@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ThemeToggle";
+import logo from "@/assets/logo.png";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -22,11 +24,13 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white font-bold text-xl">Z</span>
-            </div>
-            <span className="text-xl font-bold text-gradient">ziomasoft</span>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <img 
+              src={logo} 
+              alt="Ziomasoft Logo" 
+              className="h-10 w-10 transform group-hover:scale-110 transition-transform duration-300"
+            />
+            <span className="text-xl font-bold text-primary">ziomasoft</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -57,20 +61,20 @@ const Header = () => {
                           <Link
                             key={service.id}
                             to={`/services/${service.id}`}
-                            className="group block p-4 rounded-lg hover:bg-accent transition-colors"
-                          >
-                            <div className="flex items-start gap-3">
-                              <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0 group-hover:shadow-glow transition-all">
-                                <service.icon className="text-white" size={20} />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">
-                                  {service.title}
-                                </div>
-                                <p className="text-xs text-muted-foreground line-clamp-2">
-                                  {service.description}
-                                </p>
-                              </div>
+                             className="group block p-4 rounded-lg hover:bg-secondary hover:text-secondary-foreground transition-colors"
+                           >
+                             <div className="flex items-start gap-3">
+                               <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center flex-shrink-0 transition-all">
+                                 <service.icon className="text-primary-foreground" size={20} />
+                               </div>
+                               <div className="flex-1 min-w-0">
+                                 <div className="font-semibold text-sm mb-1">
+                                   {service.title}
+                                 </div>
+                                 <p className="text-xs opacity-90 line-clamp-2">
+                                   {service.description}
+                                 </p>
+                               </div>
                             </div>
                           </Link>
                         ))}
@@ -141,21 +145,25 @@ const Header = () => {
             </Link>
           </nav>
 
-          {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
-            <Button asChild className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
+          {/* CTA Button & Theme Toggle - Desktop */}
+          <div className="hidden md:flex items-center gap-2">
+            <ThemeToggle />
+            <Button asChild variant="secondary">
               <Link to="/contact">Get Started</Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Theme Toggle & Mobile Menu Button */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              className="text-foreground"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -197,11 +205,11 @@ const Header = () => {
               >
                 Contact
               </Link>
-              <Button asChild className="bg-gradient-primary w-full">
-                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                  Get Started
-                </Link>
-              </Button>
+               <Button asChild variant="secondary" className="w-full">
+                 <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                   Get Started
+                 </Link>
+               </Button>
             </div>
           </nav>
         )}

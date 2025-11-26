@@ -61,7 +61,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              About <span className="text-gradient">Ziomasoft</span>
+              About <span className="text-secondary">Ziomasoft</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Building intelligent digital solutions for the future
@@ -76,7 +76,7 @@ const About = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground">
@@ -200,8 +200,8 @@ const About = () => {
                 key={index} 
                 className="p-6 rounded-xl bg-card border border-border hover-lift text-center group"
               >
-                <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all duration-300">
-                  <value.icon className="text-white" size={32} />
+                <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4 transition-all duration-300">
+                  <value.icon className="text-secondary-foreground" size={32} />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
                 <p className="text-muted-foreground">{value.description}</p>
@@ -232,8 +232,8 @@ const About = () => {
                   className="p-8 rounded-xl bg-card border border-border hover-lift hover:border-primary/50 transition-all group"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0 group-hover:shadow-glow transition-all">
-                      <item.icon className="text-white" size={24} />
+                    <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center flex-shrink-0 transition-all">
+                      <item.icon className="text-primary-foreground" size={24} />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">

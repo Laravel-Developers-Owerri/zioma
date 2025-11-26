@@ -12,7 +12,7 @@ const Products = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Our <span className="text-gradient">Products</span>
+              Our <span className="text-secondary">Products</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Innovative software solutions built to solve real-world problems

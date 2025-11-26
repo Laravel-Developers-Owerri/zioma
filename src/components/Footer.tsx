@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,11 +11,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">Z</span>
-              </div>
-              <span className="text-xl font-bold text-gradient">ziomasoft</span>
+            <Link to="/" className="flex items-center space-x-3">
+              <img 
+                src={logo} 
+                alt="Ziomasoft Logo" 
+                className="h-10 w-10"
+              />
+              <span className="text-xl font-bold text-primary">ziomasoft</span>
             </Link>
             <p className="text-muted-foreground text-sm">
               Building intelligent digital solutions for the future.
