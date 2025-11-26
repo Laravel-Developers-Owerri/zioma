@@ -77,7 +77,7 @@ const Career = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Join Our <span className="text-gradient">Team</span>
+              Join Our <span className="text-secondary">Team</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Build the future of technology with passionate innovators
@@ -99,8 +99,8 @@ const Career = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {perks.map((perk, index) => (
               <div key={index} className="p-6 rounded-xl bg-card border border-border text-center hover-lift">
-                <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-4">
-                  <perk.icon className="text-white" size={28} />
+                <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4">
+                  <perk.icon className="text-secondary-foreground" size={28} />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{perk.title}</h3>
                 <p className="text-muted-foreground text-sm">{perk.description}</p>

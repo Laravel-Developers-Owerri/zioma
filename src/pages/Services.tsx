@@ -14,7 +14,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Our <span className="text-gradient">Services</span>
+              Our <span className="text-secondary">Services</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Comprehensive technology solutions designed to transform your business
@@ -44,7 +44,7 @@ const Services = () => {
             <div className="space-y-8">
               <div className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground font-bold">
                     1
                   </div>
                 </div>
@@ -59,7 +59,7 @@ const Services = () => {
 
               <div className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground font-bold">
                     2
                   </div>
                 </div>
@@ -74,7 +74,7 @@ const Services = () => {
 
               <div className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground font-bold">
                     3
                   </div>
                 </div>
@@ -89,7 +89,7 @@ const Services = () => {
 
               <div className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground font-bold">
                     4
                   </div>
                 </div>
@@ -116,7 +116,7 @@ const Services = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Let's discuss how our services can help transform your business
             </p>
-            <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
+            <Button asChild size="lg" variant="secondary">
               <Link to="/contact">Contact Us Today</Link>
             </Button>
           </div>

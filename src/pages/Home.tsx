@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import ServiceCard from "@/components/ServiceCard";
 import BlogCard from "@/components/BlogCard";
 import heroImage from "@/assets/hero-image.jpg";
+import techCollaboration from "@/assets/tech-collaboration.jpg";
+import codingWorkspace from "@/assets/tech-coding.jpg";
 import blogTech from "@/assets/blog-tech.jpg";
 import blogAi from "@/assets/blog-ai.jpg";
 import blogCloud from "@/assets/blog-cloud.jpg";
@@ -94,13 +96,13 @@ const Home = () => {
         <div className="container mx-auto px-4 py-32 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Building The <span className="text-gradient">Digital Future</span>
+              Building The <span className="text-secondary">Digital Future</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Intelligent, scalable, and user-centric digital products that empower businesses and individuals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg">
+              <Button asChild size="lg" variant="secondary" className="text-lg">
                 <Link to="/contact">
                   Let's Build Together <ArrowRight className="ml-2" />
                 </Link>
@@ -192,8 +194,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-primary opacity-10" />
+      <section className="py-20 relative overflow-hidden bg-secondary/10">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -202,7 +203,7 @@ const Home = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Let's discuss how we can help you achieve your digital goals
             </p>
-            <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg">
+            <Button asChild size="lg" variant="secondary" className="text-lg">
               <Link to="/contact">
                 Get Started Today <ArrowRight className="ml-2" />
               </Link>
