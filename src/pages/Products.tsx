@@ -1,56 +1,9 @@
 import ProductCard from "@/components/ProductCard";
-import productAi from "@/assets/product-ai-assistant.jpg";
-import productCrm from "@/assets/product-crm.jpg";
-import productEscrow from "@/assets/product-escrow.jpg";
-import productPm from "@/assets/product-project-manager.jpg";
-import productEcom from "@/assets/product-ecommerce.jpg";
-import productHr from "@/assets/product-hr-system.jpg";
+import { productsData } from "@/data/products";
 
 const Products = () => {
-  const products = [
-    {
-      id: "ai-assistant",
-      title: "AI Chat Assistant",
-      description: "Intelligent conversational AI that understands context and provides personalized responses to customer queries 24/7.",
-      image: productAi,
-      category: "AI"
-    },
-    {
-      id: "crm-platform",
-      title: "SmartCRM Pro",
-      description: "Complete customer relationship management solution with advanced analytics, automation, and seamless integrations.",
-      image: productCrm,
-      category: "SaaS"
-    },
-    {
-      id: "escrow-system",
-      title: "SecureEscrow",
-      description: "Blockchain-powered escrow platform ensuring safe and transparent transactions for buyers and sellers.",
-      image: productEscrow,
-      category: "FinTech"
-    },
-    {
-      id: "project-manager",
-      title: "TeamFlow",
-      description: "Collaborative project management tool with real-time updates, task tracking, and team communication features.",
-      image: productPm,
-      category: "Productivity"
-    },
-    {
-      id: "ecommerce-platform",
-      title: "ShopHub",
-      description: "Full-featured e-commerce platform with inventory management, payment processing, and marketing tools.",
-      image: productEcom,
-      category: "E-Commerce"
-    },
-    {
-      id: "hr-system",
-      title: "HRConnect",
-      description: "Comprehensive HR management system covering recruitment, onboarding, payroll, and employee performance tracking.",
-      image: productHr,
-      category: "Enterprise"
-    }
-  ];
+  // In the future, this will use: const { products } = useProducts();
+  const products = productsData;
 
   return (
     <div className="min-h-screen pt-16">
