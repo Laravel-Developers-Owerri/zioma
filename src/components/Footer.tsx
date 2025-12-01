@@ -1,98 +1,91 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
-import logo from "@/assets/logo.png";
+import { siteConfig } from "@/data/siteConfig";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { brand, contact, footer } = siteConfig;
+
+const iconMap = {
+    linkedin: Linkedin,
+    twitter: Twitter,
+    github: Github,
+  } as const;
 
   return (
     <footer className="bg-card border-t border-border mt-20">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3">
               <img 
-                src={logo} 
-                alt="Ziomasoft Logo" 
+                src={brand.logo} 
+                alt={`${brand.name} Logo`} 
                 className="h-10 w-10"
               />
-              <span className="text-xl font-bold text-primary">ziomasoft</span>
+              <span className="text-xl font-bold text-primary">{brand.name.toLowerCase()}</span>
             </Link>
             <p className="text-muted-foreground text-sm">
-              Building intelligent digital solutions for the future.
+              {footer.tagline}
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Github size={20} />
-              </a>
+              {footer.socialLinks.map((social) => {
+                const Icon = iconMap[social.icon];
+                return Icon ? (
+                  <a 
+                    key={social.platform}
+                    href={social.url} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                    aria-label={`Follow us on ${social.platform}`}
+                  >
+                    <Icon size={20} />
+                  </a>
+                ) : null;
+              })}
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/products" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/career" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Career
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold mb-4">Services</h3>
-            <ul className="space-y-2">
-              <li className="text-muted-foreground text-sm">Software Development</li>
-              <li className="text-muted-foreground text-sm">Cloud Solutions</li>
-              <li className="text-muted-foreground text-sm">SaaS Products</li>
-              <li className="text-muted-foreground text-sm">AI Automation</li>
-            </ul>
-          </div>
+          {/* Dynamic Footer Columns */}
+          {footer.columns.map((column, index) => (
+            <div key={index}>
+              <h3 className="font-semibold mb-4">{column.title}</h3>
+              <ul className="space-y-2">
+                {column.links.map((link, linkIndex) => (
+                  <li key={linkIndex}>
+                    <Link 
+                      to={link.href} 
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
           {/* Contact Info */}
           <div>
             <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 text-muted-foreground text-sm">
-                <Mail size={16} className="text-primary" />
-                <span>info@ziomasoft.com</span>
+                <Mail size={16} className="text-primary flex-shrink-0" />
+                <a href={`mailto:${contact.email}`} className="hover:text-primary transition-colors">
+                  {contact.email}
+                </a>
               </li>
               <li className="flex items-center space-x-2 text-muted-foreground text-sm">
-                <Phone size={16} className="text-primary" />
-                <span>+234 800 123 4567</span>
+                <Phone size={16} className="text-primary flex-shrink-0" />
+                <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="hover:text-primary transition-colors">
+                  {contact.phone}
+                </a>
               </li>
               <li className="flex items-center space-x-2 text-muted-foreground text-sm">
-                <MapPin size={16} className="text-primary" />
-                <span>Lagos, Nigeria</span>
+                <MapPin size={16} className="text-primary flex-shrink-0" />
+                <span>{contact.city}, {contact.country}</span>
               </li>
             </ul>
           </div>
@@ -100,7 +93,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} Ziomasoft Technologies Limited. All rights reserved.
+            {footer.copyright.replace("{year}", currentYear.toString())}
           </p>
         </div>
       </div>
