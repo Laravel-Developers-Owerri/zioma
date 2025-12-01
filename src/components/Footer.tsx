@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
+import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { brand, contact, footer } = siteConfig;
 
-const iconMap = {
+  const iconMap = {
     linkedin: Linkedin,
     twitter: Twitter,
     github: Github,
@@ -19,11 +20,7 @@ const iconMap = {
           {/* Company Info */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3">
-              <img 
-                src={brand.logo} 
-                alt={`${brand.name} Logo`} 
-                className="h-10 w-10"
-              />
+              <ThemeAwareLogo className="h-10 w-10" alt={`${brand.name} Logo`} />
               <span className="text-xl font-bold text-primary">{brand.name.toLowerCase()}</span>
             </Link>
             <p className="text-muted-foreground text-sm">

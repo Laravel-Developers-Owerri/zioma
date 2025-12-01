@@ -4,10 +4,9 @@ import { Button } from "@/components/ui/button";
 import ServiceCard from "@/components/ServiceCard";
 import BlogCard from "@/components/BlogCard";
 import SEO, { organizationSchema } from "@/components/SEO";
-import heroImage from "@/assets/hero-image.jpg";
+import TestimonialsSlider from "@/components/TestimonialsSlider";
 import techCollaboration from "@/assets/tech-collaboration.jpg";
 import techUsers from "@/assets/tech-users.jpg";
-import techInfrastructure from "@/assets/tech-infrastructure.jpg";
 import { useRecentPosts } from "@/data/blog";
 import { useTestimonials } from "@/data/siteConfig";
 
@@ -243,7 +242,7 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
+        {/* Testimonials Slider */}
         <section className="py-24">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
@@ -254,29 +253,7 @@ const Home = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {testimonials.map((testimonial, index) => (
-                <article 
-                  key={testimonial.id} 
-                  className="p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all group"
-                >
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} size={18} className="text-primary fill-primary" />
-                    ))}
-                  </div>
-                  <blockquote className="text-muted-foreground mb-6 text-sm leading-relaxed">
-                    "{testimonial.content}"
-                  </blockquote>
-                  <footer>
-                    <cite className="not-italic">
-                      <p className="font-semibold text-foreground">{testimonial.name}</p>
-                      <p className="text-xs text-muted-foreground">{testimonial.role}, {testimonial.company}</p>
-                    </cite>
-                  </footer>
-                </article>
-              ))}
-            </div>
+            <TestimonialsSlider testimonials={testimonials} />
           </div>
         </section>
 
