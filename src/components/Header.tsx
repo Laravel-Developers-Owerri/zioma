@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
-import logo from "@/assets/logo.png";
+import ThemeAwareLogo from "@/components/ThemeAwareLogo";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -25,11 +25,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <img 
-              src={logo} 
-              alt="Ziomasoft Logo" 
-              className="h-10 w-10 transform group-hover:scale-110 transition-transform duration-300"
-            />
+            <ThemeAwareLogo className="h-10 w-10 transform group-hover:scale-110 transition-transform duration-300" />
             <span className="text-xl font-bold text-primary">ziomasoft</span>
           </Link>
 
