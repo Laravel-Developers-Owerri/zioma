@@ -193,7 +193,7 @@ const Home = () => {
                   {config.features.section1.bullets.map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                        <LucideIcons.Zap size={14} className="text-secondary" />
+                        <Zap size={14} className="text-secondary" />
                       </div>
                       <span className="text-foreground">{item}</span>
                     </li>
