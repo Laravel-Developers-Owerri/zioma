@@ -26,7 +26,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <ThemeAwareLogo className="h-10 w-10 transform group-hover:scale-110 transition-transform duration-300" />
-            <span className="text-xl font-bold text-primary">ziomasoft</span>
+            <span className="text-3xl font-bold dark:text-[#ffffff] text-primary">ziomasoft</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -43,7 +43,7 @@ const Header = () => {
             >
               About
             </Link>
-            
+
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -57,20 +57,20 @@ const Header = () => {
                           <Link
                             key={service.id}
                             to={`/services/${service.id}`}
-                             className="group block p-4 rounded-lg hover:bg-secondary hover:text-secondary-foreground transition-colors"
-                           >
-                             <div className="flex items-start gap-3">
-                               <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center flex-shrink-0 transition-all">
-                                 <service.icon className="text-primary-foreground" size={20} />
-                               </div>
-                               <div className="flex-1 min-w-0">
-                                 <div className="font-semibold text-sm mb-1">
-                                   {service.title}
-                                 </div>
-                                 <p className="text-xs opacity-90 line-clamp-2">
-                                   {service.description}
-                                 </p>
-                               </div>
+                            className="group block p-4 rounded-lg hover:bg-secondary hover:text-secondary-foreground transition-colors"
+                          >
+                            <div className="flex items-start gap-3">
+                              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center flex-shrink-0 transition-all">
+                                <service.icon className="text-primary-foreground" size={20} />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <div className="font-semibold text-sm mb-1">
+                                  {service.title}
+                                </div>
+                                <p className="text-xs opacity-90 line-clamp-2">
+                                  {service.description}
+                                </p>
+                              </div>
                             </div>
                           </Link>
                         ))}
@@ -201,11 +201,11 @@ const Header = () => {
               >
                 Contact
               </Link>
-               <Button asChild variant="secondary" className="w-full">
-                 <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                   Get Started
-                 </Link>
-               </Button>
+              <Button asChild variant="secondary" className="w-full">
+                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                  Get Started
+                </Link>
+              </Button>
             </div>
           </nav>
         )}

@@ -21,7 +21,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3">
               <ThemeAwareLogo className="h-10 w-10" alt={`${brand.name} Logo`} />
-              <span className="text-xl font-bold text-primary">{brand.name.toLowerCase()}</span>
+              <span className="text-3xl font-bold text-primary">{brand.name.toLowerCase()}</span>
             </Link>
             <p className="text-muted-foreground text-sm">
               {footer.tagline}
@@ -30,9 +30,9 @@ const Footer = () => {
               {footer.socialLinks.map((social) => {
                 const Icon = iconMap[social.icon];
                 return Icon ? (
-                  <a 
+                  <a
                     key={social.platform}
-                    href={social.url} 
+                    href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -52,8 +52,8 @@ const Footer = () => {
               <ul className="space-y-2">
                 {column.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <Link 
-                      to={link.href} 
+                    <Link
+                      to={link.href}
                       className="text-muted-foreground hover:text-primary transition-colors text-sm"
                     >
                       {link.label}
