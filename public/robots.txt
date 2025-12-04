@@ -1,8 +1,13 @@
+# Robots.txt for Ziomasoft Technologies Limited
+# https://www.ziomasoft.com
+
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -10,5 +15,15 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: LinkedInBot
+Allow: /
+
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://www.ziomasoft.com/sitemap.xml
+
+# Disallow admin/private areas (add as needed)
+# Disallow: /admin/
+# Disallow: /api/
