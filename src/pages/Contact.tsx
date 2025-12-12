@@ -35,7 +35,7 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate form
     const validation = validateContactForm(formData);
     if (!validation.valid) {
@@ -53,16 +53,16 @@ const Contact = () => {
 
     try {
       const response = await submitContactForm(formData);
-      
+
       if (response.success) {
         // Show success alert
         alert(`Thank you for your message!\n\nWe have received your inquiry and will get back to you within 24 hours.\n\nReference: ${response.ticketId}`);
-        
+
         toast({
           title: "Message Sent!",
           description: "We'll get back to you within 24 hours.",
         });
-        
+
         // Reset form
         setFormData({
           name: "",
@@ -125,7 +125,7 @@ const Contact = () => {
           <div className="absolute inset-0 bg-muted/30" />
           <div className="absolute top-20 right-20 w-72 h-72 bg-secondary/10 rounded-full blur-3xl" />
           <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-          
+
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center animate-fade-in">
               <span className="text-secondary font-medium mb-4 block">Get In Touch</span>
@@ -149,7 +149,7 @@ const Contact = () => {
                 <p className="text-muted-foreground mb-8">
                   Fill out the form and our team will get back to you within 24 hours.
                 </p>
-                
+
                 <div className="space-y-6">
                   {contactInfo.map((item, index) => (
                     <a
@@ -187,7 +187,7 @@ const Contact = () => {
               <div className="lg:col-span-2 animate-slide-up" style={{ animationDelay: "100ms" }}>
                 <div className="bg-card border border-border rounded-2xl p-8 md:p-10">
                   <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
@@ -208,7 +208,7 @@ const Contact = () => {
                           <p id="name-error" className="text-sm text-destructive">{errors.name}</p>
                         )}
                       </div>
-                      
+
                       <div className="space-y-2">
                         <Label htmlFor="email">
                           Email Address <span className="text-destructive">*</span>
@@ -248,7 +248,7 @@ const Contact = () => {
                           <p id="phone-error" className="text-sm text-destructive">{errors.phone}</p>
                         )}
                       </div>
-                      
+
                       <div className="space-y-2">
                         <Label htmlFor="company">Company Name</Label>
                         <Input
@@ -295,10 +295,10 @@ const Contact = () => {
                       </p>
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      variant="secondary" 
-                      size="lg" 
+                    <Button
+                      type="submit"
+                      variant="secondary"
+                      size="lg"
                       className="w-full"
                       disabled={isSubmitting}
                     >
@@ -326,10 +326,23 @@ const Contact = () => {
           <div className="container mx-auto px-4">
             <div className="rounded-2xl overflow-hidden border border-border bg-card h-80 flex items-center justify-center">
               <div className="text-center">
-                <MapPin size={48} className="mx-auto mb-4 text-muted-foreground" />
-                <p className="text-muted-foreground">Interactive map will be displayed here</p>
+                {/* <MapPin size={48} className="mx-auto mb-4 text-muted-foreground" /> */}
+                {/* <p className="text-muted-foreground">Interactive map will be displayed here</p> */}
                 <p className="text-sm text-muted-foreground mt-2">
-                  {siteConfig.contact.address}, {siteConfig.contact.city}, {siteConfig.contact.country}
+                  {/* {siteConfig.contact.address}, {siteConfig.contact.city}, {siteConfig.contact.country} */}
+                  <iframe src={siteConfig.contact.mapUrl} width="1300" height="310" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                  {/* <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1124.1734425777865!2d6.927955916892274!3d4.8411378297428085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069cff2312cd2ef%3A0x1cfa7cc978c31018!2sBus%20Stop!5e0!3m2!1sen!2sng!4v1764158431988!5m2!1sen!2sng"
+                    width="1200"
+                    height="380"
+                    frameBorder={0}
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    aria-hidden={false}
+                    tabIndex={0}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  /> */}
                 </p>
               </div>
             </div>

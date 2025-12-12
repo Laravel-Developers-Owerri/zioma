@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock, User, Share2, Twitter, Linkedin, Copy } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, Share2, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LinkedinIcon from "@/components/LinkedinIcon";
+import TwitterIcon from "@/components/TwitterIcon";
 import { useBlogPost, blogPostsData } from "@/data/blog";
 import SEO, { blogPostSchema } from "@/components/SEO";
 import BlogCard from "@/components/BlogCard";
@@ -150,22 +152,22 @@ const BlogDetail = () => {
                         Share
                       </h3>
                       <div className="flex flex-col gap-2">
-                        <Button 
-                          variant="outline" 
-                          size="sm" 
+                        <Button
+                          variant="outline"
+                          size="sm"
                           className="justify-start"
                           onClick={() => window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}`, '_blank')}
                         >
-                          <Twitter size={16} className="mr-2" />
+                          <TwitterIcon size={16} className="mr-2" />
                           Twitter
                         </Button>
-                        <Button 
-                          variant="outline" 
-                          size="sm" 
+                        <Button
+                          variant="outline"
+                          size="sm"
                           className="justify-start"
                           onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank')}
                         >
-                          <Linkedin size={16} className="mr-2" />
+                          <LinkedinIcon size={16} className="mr-2" />
                           LinkedIn
                         </Button>
                         <Button 

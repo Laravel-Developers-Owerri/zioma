@@ -16,6 +16,8 @@ export default {
       fontFamily: {
         sans: ['Playfair Display', 'serif'],
         blog: ['Inter', 'system-ui', 'sans-serif'],
+        Caesar: ['Caesar Dressing', 'cursive', 'system-ui', 'sans-serif'],
+        OpenSans: ['Open Sans', 'sans-serif', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

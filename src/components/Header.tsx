@@ -26,7 +26,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <ThemeAwareLogo className="h-10 w-10 transform group-hover:scale-110 transition-transform duration-300" />
-            <span className="text-3xl font-bold dark:text-[#ffffff] text-primary">ziomasoft</span>
+            <span className="text-3xl font-bold dark:text-[#ffffff] text-primary font-Caesar">ziomasoft</span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -283,29 +283,29 @@ export const siteConfig: SiteConfig = {
     twitterHandle: "@Ziomasoft",
   },
   contact: {
-    email: "info@ziomasoft.com",
-    phone: "+234 800 123 4567",
-    address: "123 Tech Hub Plaza",
-    city: "Lagos",
+    email: "hello@ziomasoft.com",
+    phone: "+234 911 317 2893",
+    address: "Mechanic Bus Stop, Ogbogoro, Port Harcourt, Rivers State, Nigeria",
+    city: "Port Harcourt",
     country: "Nigeria",
-    mapUrl: "https://maps.google.com/?q=Lagos,Nigeria",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1124.1734425777865!2d6.927955916892274!3d4.8411378297428085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069cff2312cd2ef%3A0x1cfa7cc978c31018!2sBus%20Stop!5e0!3m2!1sen!2sng!4v1764158431988!5m2!1sen!2sng",
   },
   navigation: [
     { id: "home", label: "Home", href: "/", type: "link", order: 1 },
     { id: "about", label: "About", href: "/about", type: "link", order: 2 },
-    { 
-      id: "services", 
-      label: "Services", 
-      href: "/services", 
-      type: "dropdown", 
+    {
+      id: "services",
+      label: "Services",
+      href: "/services",
+      type: "dropdown",
       order: 3,
       children: []
     },
-    { 
-      id: "products", 
-      label: "Products", 
-      href: "/products", 
-      type: "dropdown", 
+    {
+      id: "products",
+      label: "Products",
+      href: "/products",
+      type: "dropdown",
       order: 4,
       children: []
     },
@@ -343,9 +343,9 @@ export const siteConfig: SiteConfig = {
       { id: "linkedin", platform: "LinkedIn", url: "https://linkedin.com/company/ziomasoft", icon: "Linkedin", isActive: true, order: 1 },
       { id: "twitter", platform: "Twitter", url: "https://twitter.com/ziomasoft", icon: "Twitter", isActive: true, order: 2 },
       { id: "github", platform: "GitHub", url: "https://github.com/ziomasoft", icon: "Github", isActive: true, order: 3 },
-      { id: "instagram", platform: "Instagram", url: "https://instagram.com/ziomasoft", icon: "Instagram", isActive: false, order: 4 },
-      { id: "facebook", platform: "Facebook", url: "https://facebook.com/ziomasoft", icon: "Facebook", isActive: false, order: 5 },
-      { id: "youtube", platform: "YouTube", url: "https://youtube.com/ziomasoft", icon: "Youtube", isActive: false, order: 6 },
+      { id: "instagram", platform: "Instagram", url: "https://instagram.com/ziomasoft", icon: "Instagram", isActive: true, order: 4 },
+      { id: "facebook", platform: "Facebook", url: "https://facebook.com/ziomasoft", icon: "Facebook", isActive: true, order: 5 },
+      { id: "youtube", platform: "YouTube", url: "https://youtube.com/ziomasoft", icon: "Youtube", isActive: true, order: 6 },
     ],
     copyright: "© {year} Ziomasoft Technologies Limited. All rights reserved.",
     tagline: "Building intelligent digital solutions for the future.",
@@ -595,7 +595,7 @@ export const aboutPageConfig: AboutPageConfig = {
 export const useSiteConfig = () => {
   // TODO: Replace with API call when backend is ready
   // const { data, isLoading, error } = useQuery(['siteConfig'], fetchSiteConfig);
-  
+
   return {
     config: siteConfig,
     isLoading: false,
@@ -606,11 +606,11 @@ export const useSiteConfig = () => {
 export const useTestimonials = () => {
   // TODO: Replace with API call when backend is ready
   // const { data, isLoading, error } = useQuery(['testimonials'], fetchTestimonials);
-  
+
   const activeTestimonials = testimonialsData
     .filter(t => t.isActive)
     .sort((a, b) => a.order - b.order);
-  
+
   return {
     testimonials: activeTestimonials,
     isLoading: false,
@@ -621,7 +621,7 @@ export const useTestimonials = () => {
 export const useHomePageConfig = () => {
   // TODO: Replace with API call when backend is ready
   // const { data, isLoading, error } = useQuery(['homePageConfig'], fetchHomePageConfig);
-  
+
   return {
     config: homePageConfig,
     isLoading: false,
@@ -632,7 +632,7 @@ export const useHomePageConfig = () => {
 export const useAboutPageConfig = () => {
   // TODO: Replace with API call when backend is ready
   // const { data, isLoading, error } = useQuery(['aboutPageConfig'], fetchAboutPageConfig);
-  
+
   return {
     config: aboutPageConfig,
     isLoading: false,
@@ -643,7 +643,7 @@ export const useAboutPageConfig = () => {
 export const useCookieConfig = () => {
   // TODO: Replace with API call when backend is ready
   // const { data, isLoading, error } = useQuery(['cookieConfig'], fetchCookieConfig);
-  
+
   return {
     config: siteConfig.cookies,
     isLoading: false,
@@ -654,7 +654,7 @@ export const useCookieConfig = () => {
 export const useNewsletterConfig = () => {
   // TODO: Replace with API call when backend is ready
   // const { data, isLoading, error } = useQuery(['newsletterConfig'], fetchNewsletterConfig);
-  
+
   return {
     config: siteConfig.newsletter,
     isLoading: false,

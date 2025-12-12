@@ -1,16 +1,23 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 import ThemeAwareLogo from "@/components/ThemeAwareLogo";
+import LinkedinIcon from "@/components/LinkedinIcon";
+import TwitterIcon from "@/components/TwitterIcon";
+import InstagramIcon from "@/components/InstagramIcon";
+import YoutubeIcon from "@/components/YoutubeIcon";
+import FacebookIcon from "@/components/FacebookIcon";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { brand, contact, footer } = siteConfig;
 
   const iconMap = {
-    linkedin: Linkedin,
-    twitter: Twitter,
-    github: Github,
+    linkedin: LinkedinIcon,
+    twitter: TwitterIcon,
+    instagram: InstagramIcon,
+    facebook: FacebookIcon,
+    youtube: YoutubeIcon,
   } as const;
 
   return (
@@ -21,14 +28,15 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3">
               <ThemeAwareLogo className="h-10 w-10" alt={`${brand.name} Logo`} />
-              <span className="text-3xl font-bold text-primary">{brand.name.toLowerCase()}</span>
+              <span className="text-3xl font-bold dark:text-[#ffffff] text-primary font-Caesar">{brand.name.toLowerCase()}</span>
             </Link>
             <p className="text-muted-foreground text-sm">
               {footer.tagline}
             </p>
             <div className="flex space-x-4">
               {footer.socialLinks.map((social) => {
-                const Icon = iconMap[social.icon];
+                if (!social.isActive) return null;
+                const Icon = iconMap[social.id as keyof typeof iconMap];
                 return Icon ? (
                   <a
                     key={social.platform}

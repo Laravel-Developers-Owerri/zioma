@@ -224,7 +224,7 @@ const CareerDetail = () => {
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">{position.title}</h1>
             <p className="text-xl text-muted-foreground mb-8">{position.description}</p>
-            
+
             <div className="flex flex-wrap gap-6 text-muted-foreground mb-8">
               <span className="flex items-center gap-2">
                 <MapPin size={18} />
@@ -244,7 +244,7 @@ const CareerDetail = () => {
               </span>
             </div>
 
-            <Button size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
+            <Button size="lg" className="bg-primary hover:shadow-glow transition-all duration-300">
               Apply for this position
             </Button>
           </div>
@@ -307,7 +307,7 @@ const CareerDetail = () => {
             <p className="text-xl text-muted-foreground mb-8">
               We'd love to hear from you. Apply now and let's build something amazing together.
             </p>
-            <Button size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
+            <Button size="lg" className="bg-primary hover:shadow-glow transition-all duration-300">
               Submit Your Application
             </Button>
           </div>
